@@ -1,0 +1,65 @@
+---
+---
+<div class="relative sm:block hidden">
+    <button id="dropdownButtonEl" class="relative z-10 block h-10 w-10 rounded-full overflow-hidden border-2 border-gray-500 focus:outline-none focus:border-white cursor-pointer">
+        <img class="h-full w-full object-cover" src="https://plus.unsplash.com/premium_photo-1739131476773-02a75eb96d5d?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">/
+    </button>
+    <button id="bcgButton" tabindex="-1" class="fixed inset-0 w-full h-full bg-black opacity-50 cursor-default"></button>
+    <div id="dropdownEl" class="absolute right-0 mt-2 bg-white rounded-lg w-32 shadow-xl">
+        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">Mobica</a>
+        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">softfin</a>
+        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">gft</a>
+    </div>
+</div>
+<script>
+    const dropdownEl = document.getElementById("dropdownEl")
+    const dropdownButtonEl = document.getElementById("dropdownButtonEl")
+    const bcgButton = document.getElementById("bcgButton")
+    let dropdown = true; //by default it is shown
+    if(dropdown){
+        dropdownEl?.classList.add('hidden'); // hide it
+        bcgButton?.classList.add('hidden'); // hide it
+        dropdown = false
+    }
+    function closeDropdown() {
+        dropdownEl?.classList.add('hidden')
+    }
+    dropdownButtonEl?.addEventListener('click', ()=>{
+        if(!dropdown){
+        bcgButton?.classList.remove('hidden'); // hide it
+        dropdownEl?.classList.remove('hidden')  
+
+        } else {
+         dropdownEl?.classList.add('hidden')
+        bcgButton?.classList.add('hidden'); // hide it
+        }
+        dropdown = !dropdown
+    })
+    bcgButton?.addEventListener('click', ()=>{
+        if(!dropdown){
+        bcgButton?.classList.remove('hidden'); // hide it
+        dropdownEl?.classList.remove('hidden')
+
+        } else {
+         dropdownEl?.classList.add('hidden')
+        bcgButton?.classList.add('hidden'); // hide it
+        }
+        dropdown = !dropdown
+    })
+    // Add an event listener for keydown events on the document
+document.addEventListener('keydown', function(event) {
+  // Check if the pressed key is 'Escape'
+  if (event.key === 'Escape' || event.key === 'Esc') {
+    if(!dropdown){
+        bcgButton?.classList.remove('hidden'); // hide it
+        dropdownEl?.classList.remove('hidden')
+
+        } else {
+         dropdownEl?.classList.add('hidden')
+        bcgButton?.classList.add('hidden'); // hide it
+        }
+        dropdown = !dropdown
+  }
+});
+
+</script>
