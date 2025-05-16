@@ -44,11 +44,9 @@ import ProjectsDropdown from "../components/ProjectsDropdown.astro";
 <script>
     var isOpen = true; 
     const menuItems = document.getElementById("menuItems")
-    const hamburgerButton = document.getElementById("hamburgerButton")
     const hamburgerIcon = document.getElementById('hamburgerIcon')
-    const closeIcon = "&#10007;"
-    const openIcon = "&#9776;"
 
+    const openIcon = "&#9776;"
     function hideBurgerMenu(){
         menuItems?.classList.remove("block")
         menuItems?.classList.add("hidden")
@@ -57,20 +55,24 @@ import ProjectsDropdown from "../components/ProjectsDropdown.astro";
         }
     }
 
-        function showBurgerMenu(){
-            menuItems?.classList.add("block")
+    const closeIcon = "&#10007;"
+    function showBurgerMenu(){
+        menuItems?.classList.add("block")
         menuItems?.classList.remove("hidden")
         if(hamburgerIcon)
         hamburgerIcon.innerHTML=closeIcon
-        }
-        hideBurgerMenu();
+    }
+
+    hideBurgerMenu();
+
+    const hamburgerButton = document.getElementById("hamburgerButton")
     hamburgerButton?.addEventListener('click', ()=>{
     if(isOpen){
         showBurgerMenu()
     } else {
         hideBurgerMenu()
     }
-    isOpen = !isOpen
+        isOpen = !isOpen
     })
 
 </script>
