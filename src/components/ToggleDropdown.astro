@@ -1,0 +1,33 @@
+<div
+    x-data="{ open: false }"
+    @click.away="open = false"
+    class="relative inline-block text-left"
+>
+    <button
+        x-on:click="open = !open"
+        class="inline-flex justify-center w-full rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 focus:outline-none"
+    >
+        Toggle Dropdown
+    </button>
+    <div
+        x-show="open"
+        x-transition
+        class="absolute left-0 z-10 mt-2 w-48 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border border-gray-200"
+    >
+        <a
+            href="#"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            @click="console.log($event.target.textContent.trim())">Item 1</a
+        >
+        <a
+            href="#"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            @click="console.log($event.target.textContent.trim())">Item 2</a
+        >
+        <a
+            href="#"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            @click="console.log($event.target.textContent.trim())">Item 3</a
+        >
+    </div>
+</div>
