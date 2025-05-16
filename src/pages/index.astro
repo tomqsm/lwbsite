@@ -1,8 +1,11 @@
 ---
+import ToggleDropdown from '../components/ToggleDropdown.astro';
 import Layout from '../layouts/Layout.astro';
 const lwbVersion = import.meta.env.PUBLIC_LWB_VERSION;
 ---
 
 <Layout>
 	<p>lwbVersion is {lwbVersion}</p>
+	<ToggleDropdown/>
+
 </Layout>
