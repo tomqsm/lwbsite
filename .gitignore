@@ -1,0 +1,30 @@
+# Node.js dependencies
+node_modules/
+
+# Astro build output
+dist/
+
+# Optional: Astro image cache
+public/images/generated/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*.local
+
+# VS Code settings
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Optional: lock files if you want to ignore them (not recommended usually)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
